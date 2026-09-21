@@ -34,4 +34,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   jaffle_shop:
-    +materialized: table #default materialization for all models in this project will be a view
+    stg:
+      +materialized: view #default materialization for all models in stg environment will be a view
+    marts:
+      +materialized: table #default materialization for all models in marts environment will be a table
